@@ -45,13 +45,15 @@ Bash
 Navigate to the backend directory and install the necessary dependencies.
 Generated bash
 cd server
-npm install
-Use code with caution.
-Bash
-Environment Variables
-Create a .env file in the server directory. This file stores all your secret keys and configuration variables. This file is included in .gitignore and should never be committed to version control.
+npm install```
+
+#### Environment Variables
+
+Create a `.env` file in the `server` directory. This file stores all your secret keys and configuration variables. **This file is included in `.gitignore` and should never be committed to version control.**
+
 Fill it with your own credentials:
-Generated env
+
+```env
 # --- Server & Database ---
 PORT=5001
 MONGO_URI=mongodb+srv://<user>:<password>@<your-cluster-url>/yourDatabaseName?retryWrites=true&w=majority
@@ -71,7 +73,8 @@ GOOGLE_CALLBACK_URL=http://localhost:5001/api/auth/google/callback
 # --- Frontend URL for Redirects ---
 FRONTEND_URL=http://localhost:3000
 Use code with caution.
-Env
+Bash
+Note on Credentials:
 For EMAIL_PASS: You must use a 16-character App Password generated from your Google Account security settings, not your regular password.
 For Google OAuth: You must create a project in the Google Cloud Console, create OAuth 2.0 credentials, and ensure http://localhost:3000 is an "Authorized JavaScript origin" and http://localhost:5001/api/auth/google/callback is an "Authorized redirect URI".
 3. Frontend Setup
@@ -97,13 +100,13 @@ Bash
 The React development server will start, and a browser window should open to http://localhost:3000.
 You can now interact with the full application.
 API Endpoints
-All authentication-related endpoints are prefixed with /api/auth.
+All authentication-related endpoints are prefixed with /api/auth. The user profile endpoint is prefixed with /api/users.
 Method	Endpoint	Description	Access
-POST	/register	Register a new user with email and password.	Public
-POST	/verify-otp	Verify the OTP sent to a new user's email.	Public
-POST	/login	Log in a verified user with email and password.	Public
-GET	/google	Initiates the Google OAuth 2.0 sign-in flow.	Public
-GET	/google/callback	The callback URL for Google to redirect to.	Public
-POST	/forgot-password	Sends a password reset link to the user's email.	Public
-PUT	/reset-password/:token	Resets the user's password using the provided token.	Public
+POST	/api/auth/register	Register a new user with email and password.	Public
+POST	/api/auth/verify-otp	Verify the OTP sent to a new user's email.	Public
+POST	/api/auth/login	Log in a verified user with email and password.	Public
+GET	/api/auth/google	Initiates the Google OAuth 2.0 sign-in flow.	Public
+GET	/api/auth/google/callback	The callback URL for Google to redirect to.	Public
+POST	/api/auth/forgot-password	Sends a password reset link to the user's email.	Public
+PUT	/api/auth/reset-password/:token	Resets the user's password using the provided token.	Public
 GET	/api/users/profile	Gets the profile of the currently logged-in user.	Private
