@@ -2,6 +2,8 @@
 
 This project is a comprehensive, full-stack authentication system built with the **MERN stack** (MongoDB, Express, React, Node.js) and **TypeScript**. It provides a secure and feature-rich foundation for any modern web application, handling user registration, login, session management, and password recovery with multiple authentication strategies.
 
+<img width="1865" height="893" alt="image" src="https://github.com/user-attachments/assets/007e0e19-a407-4532-8bfb-ccb13e40c6e7" />
+
 ---
 
 ## ✨ Features
