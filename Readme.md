@@ -6,6 +6,7 @@ This project is a comprehensive, full-stack authentication system built with the
 
 ---
 
+
 ## ✨ Features
 
 ✅ **Email & Password Authentication** — Classic yet secure registration with password hashing (bcrypt).  
